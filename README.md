@@ -14,6 +14,8 @@ Installation de Joomla : Après avoir démarré les containers avec docker-compo
 
 Sauvegarde de la base de données : J'ai assuré la sauvegarde correcte de la base de données afin que d'autres utilisateurs puissent déployer l'application avec un simple docker-compose up.
 
+Création du fichier nginx.conf :
+Le fichier de configuration Nginx, souvent nommé nginx.conf, est un élément crucial dans la mise en place d'un serveur Web Nginx pour héberger des applications web. Dans le contexte de l'exercice pour Dockeriser Joomla, ce fichier est nécessaire pour configurer correctement le serveur Nginx afin de servir les fichiers et les pages de l'application Joomla.
 Points importants :
 J'ai suivi les meilleures pratiques de Docker pour assurer la portabilité, la reproductibilité et la sécurité de l'application.
 
