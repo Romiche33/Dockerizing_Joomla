@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  webserver:
+    image: nginx:latest
+    ports:
+      - "8081:80"
+    volumes:
+      - ./nginx.conf:/nginx.conf/nginx.conf
+  
+
+      - ./html:/var/www/html
+    depends_on:
+      - php
+      - mariadb
+
+  php:
+    image: php:latest
+    volumes:
+      - ./html:/var/www/html
+
+  mariadb:
+    image: mariadb:latest
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: ead
+    volumes:
+      - ./data:/var/lib/mysql
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
